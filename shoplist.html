@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping list mobile app</title>        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!-- Find online source for this if needed -->
+        <!-- <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />  -->
+
+        <!-- Move this later to external sheet -->
+        <style>
+        .bought{ text-decoration: line-through; }
+        </style>
+            
+        <script>
+        $(document).ready(function(){
+            $("li").click(function(){
+                $(this).toggleClass('bought');
+            });    
+        });
+        </script>
+
+    </head>
+  
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header">
+                <h1>Things to buy</h1>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible">
+                    <h1>Milk etc.</h1>
+                    <ul data-role="listview" data-inset="true">
+                        <li>Milk</li>
+                        <li>Joghurt</li>
+                        <li>Cheese</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Green stuff</h1>
+                    <ul data-role="listview" data-inset="true">
+                        <li>Tomatos</li>
+                        <li>Salad</li>
+                        <li>Olives</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
