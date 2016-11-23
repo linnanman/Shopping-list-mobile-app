@@ -10,9 +10,10 @@
         <!-- Find online source for this if needed -->
         <!-- <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />  -->
 
-        <!-- Move this later to external sheet -->
+        <!-- Move this later to external sheet? -->
         <style>
-        .bought{ text-decoration: line-through; }
+        .bought{text-decoration: line-through;}
+        .ui-btn {text-align: left}
         </style>
             
         <script>
@@ -26,10 +27,26 @@
     </head>
   
     <body>
-        <div data-role="page" id="page1">
-            <div data-role="header">
-                <h1>Things to buy</h1>
+
+        <!-- Main page - shopping list -->
+        <div data-role="page" id="list">
+            
+            <!-- Side menu -->
+            <div data-role="panel" id="menuPanel" data-display="reveal">
+                <div data-role="controlgroup">
+                    <a href="#list" data-rel="close" class="ui-btn ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
+                    <a href="#settings" data-rel="close" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+                </div>
             </div>
+
+            <!-- Header -->
+            <div data-role="header">
+                <a href="#menuPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">Bars Icon</a>
+                <h1>Things to buy</h1>
+                <a href="#" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-edit ui-btn-icon-left ui-btn-icon-notext">Edit</a>
+            </div>            
+
+            <!-- List content -->
             <div data-role="content">
                 <div data-role="collapsible">
                     <h1>Milk etc.</h1>
@@ -48,6 +65,25 @@
                     </ul>
                 </div>
             </div>
+        </div>
+        
+        <!-- Settings page  -->
+        <div data-role="page" id="settings">
+            
+            <!-- Side menu -->
+            <div data-role="panel" id="menuPanel" data-display="reveal">
+                <div data-role="controlgroup">
+                    <a href="#list" data-rel="close" class="ui-btn ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
+                    <a href="#settings" data-rel="close" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div data-role="header">
+                <a href="#menuPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">Bars Icon</a>
+                <h1>Settings</h1>                
+            </div>            
+
         </div>
     </body>
 </html>
