@@ -4,21 +4,15 @@
         <title>Shopping list mobile app</title>        
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
         <!-- Find online source for this if needed -->
         <!-- <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />  -->
 
-        <!-- Move this later to external sheet? -->
-        <style>
-        .bought{text-decoration: line-through;}
-        .ui-btn {text-align: left}
-        </style>
-            
         <script>
         $(document).ready(function(){
-            $("li").click(function(){
+            $("li.item").click(function(){
                 $(this).toggleClass('bought');
             });    
         });
@@ -29,6 +23,12 @@
             $( "body>[data-role='panel']" ).panel();
         });
     </script>
+
+    <style>
+        .bought {text-decoration: line-through;}
+        .ui-btn {text-align: left;}
+        h4 {text-transform: uppercase}
+    </style>
 
     </head>
   
@@ -49,17 +49,17 @@
                 <div data-role="collapsible">
                     <h1>Milk etc.</h1>
                     <ul data-role="listview" data-inset="true">
-                        <li>Milk</li>
-                        <li>Joghurt</li>
-                        <li>Cheese</li>
+                        <li class="item">Milk</li>
+                        <li class="item">Joghurt</li>
+                        <li class="item">Cheese</li>
                     </ul>
                 </div>
                 <div data-role="collapsible">
                     <h1>Green stuff</h1>
                     <ul data-role="listview" data-inset="true">
-                        <li>Tomatos</li>
-                        <li>Salad</li>
-                        <li>Olives</li>
+                        <li class="item">Tomatos</li>
+                        <li class="item">Salad</li>
+                        <li class="item">Olives</li>
                     </ul>
                 </div>
             </div>
@@ -72,8 +72,37 @@
             <!-- Header -->
             <div data-role="header">
                 <a href="#menuPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">Bars Icon</a>
-                <h1>Settings</h1>                
-            </div>            
+                <h1>Settings</h1>
+            </div>
+
+            <div data-role="content" class="ui-content">
+                <h4>Account</h4>
+                <ul data-role="listview" data-inset="true">
+                    <li><img src="flower.jpg">Vernon Flowers</li>
+                    <li data-icon="power"><a href="#">Log out</a></li>
+                </ul>
+
+                <div data-role="fieldcontain">
+                <fieldset data-role="controlgroup" data-mini="true">
+                
+                    <legend><h4>List options</h4></legend>
+                    
+                    <input type="checkbox" name="sorting" id="sorting" class="custom" />
+                    <label for="sorting">Auto sorting</label>
+
+                    <input type="checkbox" name="remove-bought" id="remove-bought" class="custom" />
+                    <label for="remove-bought">Remove bought items</label>
+                    
+                </fieldset>
+
+                <h4>Sharing</h4>
+                <ul data-role="listview" data-inset="true">
+                    <li><h3>Shared with: Viky</h3></li>
+                    <li data-icon="plus"><a href="#">Add/remove users</a></li>
+                </ul>
+
+            </div>
+            </div>
 
         </div>
         <!-- /Settings page  -->
@@ -81,8 +110,8 @@
         <!-- Side menu -->
         <div data-role="panel" id="menuPanel" data-display="reveal">
             <div data-role="controlgroup">
-                <a href="#list" data-rel="close" class="ui-btn ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
-                <a href="#settings" data-rel="close" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+                <a href="#list" data-ajax="false" data-rel="close" class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
+                <a href="#settings" data-ajax="false" data-rel="close" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
             </div>
         </div>
         <!-- /Side menu -->
