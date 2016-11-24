@@ -24,20 +24,18 @@
         });
         </script>
 
+        <script id="panel-init">
+        $(document).ready(function() {
+            $( "body>[data-role='panel']" ).panel();
+        });
+    </script>
+
     </head>
   
     <body>
 
         <!-- Main page - shopping list -->
         <div data-role="page" id="list">
-            
-            <!-- Side menu -->
-            <div data-role="panel" id="menuPanel" data-display="reveal">
-                <div data-role="controlgroup">
-                    <a href="#list" data-rel="close" class="ui-btn ui-btn-active ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
-                    <a href="#settings" data-rel="close" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
-                </div>
-            </div>
 
             <!-- Header -->
             <div data-role="header">
@@ -66,17 +64,10 @@
                 </div>
             </div>
         </div>
-        
+        <!-- /Main page -->
+
         <!-- Settings page  -->
         <div data-role="page" id="settings">
-            
-            <!-- Side menu -->
-            <div data-role="panel" id="menuPanel" data-display="reveal">
-                <div data-role="controlgroup">
-                    <a href="#list" data-rel="close" class="ui-btn ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
-                    <a href="#settings" data-rel="close" class="ui-btn ui-btn-active ui-icon-gear ui-btn-icon-left">Settings</a>
-                </div>
-            </div>
 
             <!-- Header -->
             <div data-role="header">
@@ -85,5 +76,16 @@
             </div>            
 
         </div>
+        <!-- /Settings page  -->
+
+        <!-- Side menu -->
+        <div data-role="panel" id="menuPanel" data-display="reveal">
+            <div data-role="controlgroup">
+                <a href="#list" data-rel="close" class="ui-btn ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
+                <a href="#settings" data-rel="close" class="ui-btn ui-icon-gear ui-btn-icon-left">Settings</a>
+            </div>
+        </div>
+        <!-- /Side menu -->
+
     </body>
 </html>
