@@ -69,7 +69,7 @@
             <!-- Header -->
             <div data-role="header">
                 <a href="#menuPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext">Bars Icon</a>
-                <h1>Settings</h1>
+                <h1>Options</h1>
             </div>
 
             <div data-role="content" class="ui-content">
@@ -85,17 +85,17 @@
                     <legend><h4>List options</h4></legend>
                     
                     <input type="checkbox" name="sorting" id="sorting" class="custom" />
-                    <label for="sorting">Auto sorting</label>
+                    <label for="sorting">Move bought items to the bottom</label>
 
                     <input type="checkbox" name="remove-bought" id="remove-bought" class="custom" />
                     <label for="remove-bought">Remove bought items</label>
                     
                 </fieldset>
 
-                <h4>Sharing</h4>
+                <h4>List sharing</h4>
                 <ul data-role="listview" data-inset="true">
-                    <li><h3>Shared with: Viky</h3></li>
-                    <li data-icon="plus"><a href="#">Add/remove users</a></li>
+                    <li data-icon="minus"><a href="#"><h3>Shared with: Viky</h3></a></li>
+                    <li data-icon="plus"><a href="#">Add users</a></li>
                 </ul>
 
             </div>
@@ -108,7 +108,7 @@
         <div data-role="panel" id="menuPanel" data-display="reveal">
             <div data-role="controlgroup">
                 <a href="#list" data-ajax="false" data-rel="close" class="ui-btn ui-corner-all ui-icon-bullets ui-btn-icon-left">Thigs to buy</a>
-                <a href="#settings" data-ajax="false" data-rel="close" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Settings</a>
+                <a href="#settings" data-ajax="false" data-rel="close" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-left">Options</a>
             </div>
         </div>
         <!-- /Side menu -->
