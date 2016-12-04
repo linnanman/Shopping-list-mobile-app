@@ -15,26 +15,6 @@
         });
         </script>
 
-        <!-- (Start) Add the features of jQuery UI sortable -->
-
-        <!-- *** Conflict with collabsable groups on mobile device only *** -->
-        
-        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
-        
-        <script src="jquery.ui.touch-punch.min.js"></script>
-        
-        <script>
-          $(document).bind('pageinit', function() {
-            $( "#sortable" ).sortable();
-            $( "#sortable" ).disableSelection();
-            <!-- Refresh list to the end of sort to have a correct display -->
-            $( "#sortable" ).bind( "sortstop", function(event, ui) {
-              $('#sortable').listview('refresh');
-            });
-          });
-        </script>
-        <!-- (End) Add the features of jQuery UI sortable -->     
-
         <style>
             .bought {text-decoration: line-through;}
             .ui-btn {text-align: left;}
@@ -64,27 +44,27 @@
             <!-- /Add new item field -->
 
             <!-- List content -->
-            <div data-role="content" id="sortable">
+            <div data-role="content">
                 <div data-role="collapsible">
                     <h1>Milk etc.</h1>
-                    <ul data-role="listview" id="sortable">
-                        <li class="item" draggable="true">Milk</li>
-                        <li class="item" draggable="true">Joghurt</li>
-                        <li class="item" draggable="true">Cheese</li>
+                    <ul data-role="listview">
+                        <li class="item">Milk</li>
+                        <li class="item">Joghurt</li>
+                        <li class="item">Cheese</li>
                     </ul>
                 </div>
                 <div data-role="collapsible">
                     <h1>Green stuff</h1>
-                    <ul data-role="listview" id="sortable">
-                        <li class="item" draggable="true">Tomatos</li>
-                        <li class="item" draggable="true">Salad</li>
-                        <li class="item" draggable="true">Olives</li>
+                    <ul data-role="listview">
+                        <li class="item">Tomatos</li>
+                        <li class="item">Salad</li>
+                        <li class="item">Olives</li>
                     </ul>
                 </div>
                 <div data-role="collapsible">
                     <h1>Other</h1>
-                    <ul data-role="listview" id="sortable">
-                        <!-- <li class="item" draggable="true">Smoothie</li> -->
+                    <ul data-role="listview">
+                        <!-- <li class="item">Smoothie</li> -->
                     </ul>
                 </div>
             </div>
@@ -108,8 +88,9 @@
                 </ul>
 
                 <div data-role="fieldcontain">
+                <h4>List options</h4>
                 <fieldset data-role="controlgroup" data-mini="true">                
-                    <legend><h4>List options</h4></legend>
+                    
                     
                     <input type="checkbox" name="sorting" id="sorting" class="custom" />
                     <label for="sorting">Move bought items to the bottom</label>

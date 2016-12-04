@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shopping list mobile app</title>        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <!-- (Start) Add the features of jQuery UI sortable -->
+        
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+        
+        <script src="jquery.ui.touch-punch.min.js"></script>
+        
+        <script>
+          $(document).bind('pageinit', function() {
+            $( "#sortable" ).sortable();
+            $( "#sortable" ).disableSelection();
+            <!-- Refresh list to the end of sort to have a correct display -->
+            $( "#sortable" ).bind( "sortstop", function(event, ui) {
+              $('#sortable').listview('refresh');
+            });
+          });
+        </script>
+        <!-- (End) Add the features of jQuery UI sortable -->     
+
+        <style>
+            .delete {margin: 0px; border: 0px}
+            .ui-btn {text-align: left;}
+            .ui-content {padding-top: 5px; padding-bottom: 0px}
+            h4 {text-transform: uppercase}
+        </style>
+
+    </head>
+  
+    <body>
+
+        <!-- Editing mode -->
+        <div data-role="page">
+
+            <!-- Header -->
+            <div data-role="header">
+                <a href="#settings" class="ui-btn ui-corner-all ui-icon-delete ui-btn-icon-notext">Delete</a>
+                <h1>Things to buy</h1>
+                <a href="#" class="ui-btn ui-btn-right ui-corner-all ui-shadow ui-icon-check ui-btn-icon-left ui-btn-icon-notext">Edit</a>
+            </div>            
+
+            <!-- Add new item field -->
+            <div data-role="main" class="ui-content">
+                <form method="post" action="demoform.asp">                  
+                <input type="text" name="newItem" id="newItem" placeholder="+ Add new item">                  
+            </div>
+            <!-- /Add new item field -->
+
+            <!-- List content -->
+            <div data-role="content" id="sortable">
+                <div data-role="collapsible">
+                    <h1>Milk etc.</h1>
+                    <ul data-role="listview" id="sortable">
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-alt-icon ui-nodisc-icon delete">delete</a>Milk</div></li>
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-nodisc-icon ui-alt-icon ui-nodisc-icon delete">delete</a>Joghurt</div></li>
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-nodisc-icon ui-alt-icon ui-nodisc-icon delete">delete</a>Cheese</div></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Green stuff</h1>
+                    <ul data-role="listview" id="sortable">
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-alt-icon ui-nodisc-icon delete">delete</a>Tomatos</div></li>
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-alt-icon ui-nodisc-icon delete">delete</a>Salad</div></li>
+                        <li><div><a href="#" class="ui-btn ui-btn-inline ui-icon-delete ui-mini ui-btn-icon-notext ui-alt-icon ui-nodisc-icon delete">delete</a>Olives</div></li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h1>Other</h1>
+                    <ul data-role="listview" id="sortable">
+                        <!-- <li>Smoothie</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Main page -->
+        
+    </body>
+</html>
